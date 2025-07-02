@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Your Product - Campus Closet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="sellstyle.css" />
+</head>
+<body>
+  <div class="sell-container">
+    <header class="sell-header">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+      <h1><i class="fas fa-tag"></i> Sell Your Item</h1>
+    </header>
+
+    <main class="sell-main">
+      <div class="form-container">
+        <form id="sellForm">
+          <div class="form-group">
+            <label for="productName"><i class="fas fa-cube"></i> Product Name</label>
+            <input type="text" id="productName" placeholder="e.g. Scientific Calculator" required />
+          </div>
+
+          <div class="form-group">
+            <label for="productPrice"><i class="fas fa-rupee-sign"></i> Price</label>
+            <div class="price-input">
+              <span>₹</span>
+              <input type="number" id="productPrice" placeholder="Enter amount" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="productImage"><i class="fas fa-image"></i> Image URL</label>
+            <input type="url" id="productImage" placeholder="https://example.com/image.jpg" required />
+          </div>
+
+          <div class="form-group">
+            <label for="productDescription"><i class="fas fa-align-left"></i> Description</label>
+            <textarea id="productDescription" placeholder="Describe your item (condition, features, etc.)" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Submit for Approval
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("sellForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("productName").value;
+      const price = document.getElementById("productPrice").value;
+      const image = document.getElementById("productImage").value;
+      const description = document.getElementById("productDescription").value;
+
+      const timestamp = new Date().toLocaleString("en-IN", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+
+      const product = {
+        name,
+        price,
+        image,
+        description,
+        status: "pending",
+        dateSubmitted: timestamp
+      };
+
+      const existing = JSON.parse(localStorage.getItem("products")) || [];
+      existing.push(product);
+      localStorage.setItem("products", JSON.stringify(existing));
+
+      alert("✅ Product submitted and pending admin approval.");
+      window.location.href = "product.html";
+    });
+  </script>
+</body>
+</html>

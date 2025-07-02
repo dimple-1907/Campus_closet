@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Approvals - Campus Closet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="prostyle.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <header class="admin-header">
+      <a href="admin.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+      <h1><i class="fas fa-clipboard-check"></i> Product Approvals</h1>
+      <div class="header-info">
+        <span class="pending-count" id="pendingCount">0</span> Pending Approvals
+      </div>
+    </header>
+
+    <main class="approval-main">
+      <div class="filter-options">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="approved">Approved</button>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- Products will be loaded from localStorage -->
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <i class="fas fa-check-circle"></i>
+        <h3>No pending approvals</h3>
+        <p>All products have been reviewed</p>
+        <a href="sell.html" class="action-btn">
+          <i class="fas fa-plus"></i> View New Submissions
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="proscript.js"></script>
+</body>
+</html>

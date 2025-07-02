@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Closet - Buy & Sell on Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="home_style.css" />
+</head>
+<body>
+  <!-- Header/Navigation -->
+<header class="main-header">
+    <div class="container">
+      <div class="header-container">
+        <div class="logo-container">
+          <img src="https://via.placeholder.com/50x50?text=CC" alt="Campus Closet Logo" class="logo">
+          <h1>Campus Closet</h1>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+          <a href="product.html"><i class="fas fa-tshirt"></i> Products</a>
+          <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
+          <a href="index.html" class="auth-btn"><i class="fas fa-user"></i> Login</a>
+        </nav>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Buy & Sell Campus Items</h1>
+        <p>Save money and connect with your campus community by buying and selling pre-loved items</p>
+        <div class="hero-buttons">
+          <a href="product.html" class="btn primary-btn">Browse Products</a>
+          <a href="sell.html" class="btn secondary-btn">Sell an Item</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="categories">
+   <div class="container">
+      <h2 class="section-title">Popular Categories</h2>
+      <div class="category-grid">
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Textbooks</h3>
+          <p>Find affordable course materials</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Electronics</h3>
+          <p>Laptops, phones, and gadgets</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <h3>Clothing</h3>
+          <p>Fashion and accessories</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-pen"></i>
+          </div>
+          <h3>Stationery</h3>
+          <p>Notebooks, pens, and supplies</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-couch"></i>
+          </div>
+          <h3>Furniture</h3>
+          <p>Dorm and apartment essentials</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon">
+            <i class="fas fa-bicycle"></i>
+          </div>
+          <h3>Sports & Bikes</h3>
+          <p>Equipment and bicycles</p>
+        </a>
+      </div>
+    </div>
+  </section>
+   
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Items</h2>
+        <a href="product.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="products-grid" id="approvedProducts">
+        <!-- Products will be loaded here from JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Widget -->
+  <div class="chat-widget">
+    <div class="chat-header">
+      <div class="chat-title">
+        <i class="fas fa-comments"></i>
+        <h3>Campus Support</h3>
+      </div>
+      <button class="chat-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages">
+      <div class="welcome-message">
+        <div class="message bot-message">
+          <div class="message-content">
+            Hi there! 👋 How can we help you today?
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message..." />
+      <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <button class="chat-toggle-btn">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

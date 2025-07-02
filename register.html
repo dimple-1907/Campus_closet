@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register - Campus Closet</title>
+  <link rel="stylesheet" href="register.css" />
+  <link rel="stylesheet" href="index.html">
+</head>
+<body>
+
+  <div class="register-box">
+    <div class="logo-container">
+      <img src="https://via.placeholder.com/100x100?text=Campus+Closet" alt="Campus Closet Logo" class="logo">
+    </div>
+    <h2>Join Campus Closet</h2>
+    <p class="subtitle">Create your account in seconds</p>
+    
+    <form id="registerForm">
+      <div class="input-group">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <span class="input-icon">👤</span>
+      </div>
+      
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email" required />
+        <span class="input-icon">✉️</span>
+      </div>
+      
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required />
+        <span class="input-icon">🔒</span>
+      </div>
+
+      <div class="input-group">
+        <select id="role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+        <span class="input-icon">👥</span>
+      </div>
+
+      <button type="submit" class="register-btn">Create Account</button>
+    </form>
+
+    <div class="divider">
+      <span class="divider-line"></span>
+      <span class="divider-text">or</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <p class="note">Already have an account? <a href="index.html">Sign in here</a></p>
+    <p class="terms">By registering, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const role = document.getElementById("role").value;
+
+      // Basic validation
+      if (!name || !email || !password || !role) {
+        alert("Please fill in all fields");
+        return;
+      }
+
+      const newUser = { name, email, password, role };
+
+      // Save users in localStorage for demo
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      
+      // Check if email already exists
+      const emailExists = users.some(user => user.email === email);
+      if (emailExists) {
+        alert("This email is already registered");
+        return;
+      }
+      
+      users.push(newUser);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("✅ Registration successful! Please login.");
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>
